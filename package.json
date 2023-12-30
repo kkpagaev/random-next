@@ -12,6 +12,7 @@
     "db:update": "prisma migrate dev"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.3",
     "@prisma/client": "^5.7.1",
     "next": "14.0.4",
     "react": "^18",
