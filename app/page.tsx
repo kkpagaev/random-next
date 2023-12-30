@@ -1,4 +1,5 @@
 import { prisma } from "../lib/db/prisma"
+import Form from "./form"
 
 export default async function Home() {
   const users = await prisma.user.findMany()
@@ -11,6 +12,7 @@ export default async function Home() {
           {user.name}
         </div>
       ))}
+      <Form />
     </div>
   )
 }
