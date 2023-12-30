@@ -1,3 +1,4 @@
+import { drizzleDb } from "../lib/db/drizzle"
 import { prisma } from "../lib/db/prisma"
 import ZodForm from "./zod-form"
 import ZodFormAction from "./zod-form-action"
@@ -5,7 +6,8 @@ import ZodFormAction from "./zod-form-action"
 // import Form from "./form"
 
 export default async function Home() {
-  const users = await prisma.user.findMany()
+  // const users = await prisma.user.findMany()
+  const users = await drizzleDb.query.users.findMany()
 
   return (
     <div>
@@ -15,7 +17,7 @@ export default async function Home() {
       Hello world!
       {users.map((user) => (
         <div key={user.id}>
-          {user.name}
+          {user.fullName}
         </div>
       ))}
        {/*<Form />*/}

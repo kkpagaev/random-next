@@ -3,7 +3,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { z } from "zod"
 import { FormSchema } from "../lib/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { handleAction } from "./actions";
+import { saveUser } from "./actions";
 
 type Inputs = z.infer<typeof FormSchema>
 
@@ -15,7 +15,7 @@ export default function ZodFormAction() {
   })
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    const message = await handleAction(data)
+    const message = await saveUser(data)
 
     console.log(message);
     reset()
