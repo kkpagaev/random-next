@@ -1,5 +1,6 @@
 import { prisma } from "../lib/db/prisma"
 import ZodForm from "./zod-form"
+import ZodFormAction from "./zod-form-action"
 // import ServerForm from "./server-form"
 // import Form from "./form"
 
@@ -8,7 +9,7 @@ export default async function Home() {
 
   return (
     <div>
-      <ZodForm />
+      <ZodFormAction />
       {/*<ServerForm />*/}
       <br />
       Hello world!
